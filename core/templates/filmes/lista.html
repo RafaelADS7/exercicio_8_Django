@@ -1,0 +1,42 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Filmes</title>
+    <link rel="stylesheet" href="{% static 'filmes/css/estilo.css' %}">
+</head>
+<body>
+    <div class="container mt-4">
+        <h1 class="text-center">Lista de Filmes</h1>
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Título</th>
+                    <th>Ano de Lançamento</th>
+                    <th>Descrição</th>
+                    <th>Imagem</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for filme in filmes %}
+                <tr>
+                    <td>{{ filme.titulo }}</td>
+                    <td>{{ filme.ano_lancamento }}</td>
+                    <td>{{ filme.descricao }}</td>
+                    <td>
+                        {% if filme.imagem %}
+                            <img src="{{ filme.imagem.url }}" alt="{{ filme.titulo }}" class="img-thumbnail" width="100">
+                        {% else %}
+                            <span>Sem imagem</span>
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+img {
+    margin-top: 10px;
+    height: auto;
+}
+
+table, th, td {
+    border: 1px solid rgb(168, 159, 159);
+    border-collapse: collapse; /* Evita bordas duplas */
+}
+ 
+
