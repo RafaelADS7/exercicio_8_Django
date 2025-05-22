@@ -1,4 +1,27 @@
-<h1>Detalhes do Filme</h1>
-<p>Título: {{ filme.titulo }}</p>
-<p>Ano de lançamento: {{ filme.ano_lancamento }}</p>
-<p>Descrição: {{ filme.descricao }}</p>
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Filmes</title>
+    <link rel="stylesheet" href="{% static 'filmes/css/estiloTeladetalhes.css' %}">
+</head>
+<body>
+    <div>
+        <h1>Detalhes do Filme</h1>
+    </div>
+    <section class="cobertura">
+        <section>
+            <p>Título: {{ filme.titulo }}</p>
+            <p class="p_diferenciado">Capa:  <img src="{{ filme.imagem.url }}" alt="{{ filme.titulo }}" class="img-thumbnail" width="100"></p>
+            <p >Descrição: {{ filme.descricao }}</p>
+            <p>Ano de lançamento: {{ filme.ano_lancamento }}</p>
+        </section>
+    </section>
+    
+       
+      
+</body>
+</html>
